@@ -35,11 +35,9 @@ const hiddenOrShowFeedback = msg => {
   if(msg === 'show'){
     feedback.style = 'display: block'
     inputSearch.classList.add('border-feedback')
-    inputSearch.value = ''
     return
   }
 
-  inputSearch.value = ''
   feedback.style = 'display: none'
   inputSearch.classList.remove('border-feedback')
 }
@@ -49,6 +47,7 @@ form.addEventListener('submit', async event => {
 
   const valueSearch = form.search.value
   const gifUrl = await getGif(valueSearch)
+  form.reset()
 
   //removendo feedback
   hiddenOrShowFeedback('hidden')
