@@ -35,9 +35,11 @@ const hiddenOrShowFeedback = msg => {
   if(msg === 'show'){
     feedback.style = 'display: block'
     inputSearch.classList.add('border-feedback')
+    inputSearch.value = ''
     return
   }
 
+  inputSearch.value = ''
   feedback.style = 'display: none'
   inputSearch.classList.remove('border-feedback')
 }
@@ -58,6 +60,5 @@ form.addEventListener('submit', async event => {
   }
 
   //Implemtando GIF na DOM
-  inputSearch.value = ''
   implementGif(gifUrl, valueSearch)
 })
