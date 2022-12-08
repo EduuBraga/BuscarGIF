@@ -33,7 +33,7 @@ body{
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
-  background-color: #dfdfdf;
+  background-color: #f4f4f4;
 }
 
 #form > button{
@@ -71,13 +71,24 @@ body{
 
 .gifs{
   margin: 0 auto;
-  padding: 24px;
+  padding: 40px 24px 24px 24px;
   display: grid;
-  grid-template: auto / auto auto;
+  grid-template: auto / 1fr 1fr;
   gap: 20px;
   max-width: 768px;
 }
 
 img {
   width: 100%;
+}
+
+@media screen and (max-width: 768px){ 
+  .gifs{
+    grid-template: auto / auto;
+  }
+
+  img {
+    margin: 0 auto;
+    width: 60%;
+  }
 }
